@@ -46,7 +46,7 @@ resource "aws_instance" "magento" {
   user_data  = <<-EOF
     #! /bin/bash
     curl -o /tmp/magento_preinstall.sh https://raw.githubusercontent.com/mstelles/magento/master/magento_preinstall.sh
-    if -f [ "$?" == "0" ]; then
+    if [ -s "/tmp/magento_preinstall.sh" ]; then
       bash -x /tmp/magento_preinstall.sh
       echo "installing magento"
       useradd -m -c "Magento 2" magento
