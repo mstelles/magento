@@ -1,0 +1,5 @@
+scandiweb.pub
+.terraform
+*.backup
+*.tfstate
+old*
